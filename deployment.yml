@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-rental-service
+spec:
+  selector:
+      matchLabels:
+        app: car-rental-service
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: car-rental-service
+    spec:
+      containers:
+        - name: car-rental-service
+          image: voicestreams/car-rental-service:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

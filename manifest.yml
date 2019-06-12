@@ -1,0 +1,7 @@
+---
+applications:
+- name: car-rental-service
+  memory: 1GB
+  instances: 2
+  path: build/libs/car-rental-service.jar
+
